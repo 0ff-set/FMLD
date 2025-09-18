@@ -1,0 +1,146 @@
+{
+  "rules": [
+    {
+      "id": "001",
+      "name": "High Velocity Detection",
+      "description": "Multiple transactions from same user in short time period",
+      "category": "velocity",
+      "priority": 100,
+      "isActive": true,
+      "conditions": [
+        {
+          "field": "transactions_count_1h",
+          "operator": "greaterThan",
+          "value": "5",
+          "dataType": "number"
+        }
+      ],
+      "action": "review"
+    },
+    {
+      "id": "002",
+      "name": "High Amount Transaction",
+      "description": "Transaction amount exceeds configured threshold",
+      "category": "amount",
+      "priority": 90,
+      "isActive": true,
+      "conditions": [
+        {
+          "field": "amount",
+          "operator": "greaterThan",
+          "value": "10000",
+          "dataType": "number"
+        }
+      ],
+      "action": "review"
+    },
+    {
+      "id": "003",
+      "name": "High Risk Country",
+      "description": "Transaction originating from high-risk jurisdiction",
+      "category": "geographic",
+      "priority": 80,
+      "isActive": true,
+      "conditions": [
+        {
+          "field": "country",
+          "operator": "inList",
+          "value": "CN,RU,KP,IR,SY,AF,LR,LY,SO,SD",
+          "dataType": "string"
+        }
+      ],
+      "action": "review"
+    },
+    {
+      "id": "004",
+      "name": "BIN Country Mismatch",
+      "description": "BIN issuer country doesn't match transaction location",
+      "category": "bin",
+      "priority": 70,
+      "isActive": true,
+      "conditions": [
+        {
+          "field": "bin_country",
+          "operator": "notEquals",
+          "value": "transaction_country",
+          "dataType": "string"
+        }
+      ],
+      "action": "flag"
+    },
+    {
+      "id": "005",
+      "name": "Suspicious Time Pattern",
+      "description": "Transaction during unusual hours for user's location",
+      "category": "behavioral",
+      "priority": 60,
+      "isActive": true,
+      "conditions": [
+        {
+          "field": "hour",
+          "operator": "greaterThanOrEqual",
+          "value": "2",
+          "dataType": "number"
+        },
+        {
+          "field": "hour",
+          "operator": "lessThanOrEqual",
+          "value": "6",
+          "dataType": "number"
+        }
+      ],
+      "action": "flag"
+    },
+    {
+      "id": "006",
+      "name": "New Device Detection",
+      "description": "Transaction from previously unseen device",
+      "category": "device",
+      "priority": 75,
+      "isActive": true,
+      "conditions": [
+        {
+          "field": "device_seen_before",
+          "operator": "equals",
+          "value": "false",
+          "dataType": "boolean"
+        }
+      ],
+      "action": "review"
+    },
+    {
+      "id": "007",
+      "name": "Velocity Spike",
+      "description": "Unusual transaction frequency for user",
+      "category": "velocity",
+      "priority": 85,
+      "isActive": true,
+      "conditions": [
+        {
+          "field": "daily_transaction_count",
+          "operator": "greaterThan",
+          "value": "10",
+          "dataType": "number"
+        }
+      ],
+      "action": "review"
+    },
+    {
+      "id": "008",
+      "name": "Geographic Anomaly",
+      "description": "Transaction from unusual location for user",
+      "category": "geographic",
+      "priority": 65,
+      "isActive": true,
+      "conditions": [
+        {
+          "field": "distance_from_usual_location",
+          "operator": "greaterThan",
+          "value": "1000",
+          "dataType": "number"
+        }
+      ],
+      "action": "flag"
+    }
+  ]
+}

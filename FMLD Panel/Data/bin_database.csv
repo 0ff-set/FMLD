@@ -1,0 +1,46 @@
+bin,brand,scheme,type,country,country_code,bank,level
+411111,VISA,VISA,debit,United States,US,Chase Bank,Gold
+555555,MASTERCARD,MASTERCARD,credit,Germany,DE,Deutsche Bank,Platinum
+400000,VISA,VISA,debit,Canada,CA,Royal Bank of Canada,Classic
+424242,VISA,VISA,credit,United Kingdom,GB,Barclays Bank,Gold
+378282,AMEX,AMEX,credit,United States,US,American Express,Premium
+432100,VISA,VISA,debit,Australia,AU,Commonwealth Bank,Standard
+543210,MASTERCARD,MASTERCARD,credit,France,FR,BNP Paribas,Gold
+654321,DISCOVER,DISCOVER,debit,Japan,JP,MUFG Bank,Classic
+789012,JCB,JCB,credit,China,CN,Bank of China,Platinum
+987654,UNIONPAY,UNIONPAY,debit,India,IN,State Bank of India,Standard
+412345,VISA,VISA,debit,Brazil,BR,Itau Unibanco,Gold
+512345,MASTERCARD,MASTERCARD,credit,Mexico,MX,BBVA Bancomer,Classic
+401234,VISA,VISA,debit,Spain,ES,Santander,Standard
+501234,MASTERCARD,MASTERCARD,credit,Italy,IT,UniCredit,Gold
+301234,AMEX,AMEX,credit,Netherlands,NL,ING Bank,Premium
+400001,VISA,VISA,debit,Germany,DE,Commerzbank,Classic
+500001,MASTERCARD,MASTERCARD,credit,Canada,CA,TD Bank,Gold
+400002,VISA,VISA,debit,United Kingdom,GB,Lloyds Bank,Standard
+500002,MASTERCARD,MASTERCARD,credit,Australia,AU,ANZ Bank,Gold
+400003,VISA,VISA,debit,France,FR,Societe Generale,Classic
+500003,MASTERCARD,MASTERCARD,credit,Japan,JP,Mizuho Bank,Gold
+400004,VISA,VISA,debit,China,CN,Industrial and Commercial Bank of China,Standard
+500004,MASTERCARD,MASTERCARD,credit,India,IN,HDFC Bank,Gold
+400005,VISA,VISA,debit,Brazil,BR,Banco do Brasil,Classic
+500005,MASTERCARD,MASTERCARD,credit,Mexico,MX,Citibanamex,Gold
+400006,VISA,VISA,debit,Spain,ES,BBVA,Standard
+500006,MASTERCARD,MASTERCARD,credit,Italy,IT,Intesa Sanpaolo,Gold
+400007,VISA,VISA,debit,Netherlands,NL,Rabobank,Classic
+500007,MASTERCARD,MASTERCARD,credit,Switzerland,CH,UBS,Platinum
+400008,VISA,VISA,debit,Sweden,SE,Swedbank,Standard
+500008,MASTERCARD,MASTERCARD,credit,Norway,NO,DNB,Gold
+400009,VISA,VISA,debit,Denmark,DK,Danske Bank,Classic
+500009,MASTERCARD,MASTERCARD,credit,Finland,FI,Nordea,Gold
+400010,VISA,VISA,debit,Belgium,BE,KBC Bank,Standard
+500010,MASTERCARD,MASTERCARD,credit,Austria,AT,Raiffeisen Bank,Gold
+400011,VISA,VISA,debit,Portugal,PT,Caixa Geral de Depositos,Classic
+500011,MASTERCARD,MASTERCARD,credit,Ireland,IE,Bank of Ireland,Gold
+400012,VISA,VISA,debit,Greece,GR,National Bank of Greece,Standard
+500012,MASTERCARD,MASTERCARD,credit,Poland,PL,PKO Bank Polski,Gold
+400013,VISA,VISA,debit,Czech Republic,CZ,CSOB,Classic
+500013,MASTERCARD,MASTERCARD,credit,Hungary,HU,OTP Bank,Gold
+400014,VISA,VISA,debit,Romania,RO,Banca Transilvania,Standard
+500014,MASTERCARD,MASTERCARD,credit,Turkey,TR,Isbank,Gold
+400015,VISA,VISA,debit,South Africa,ZA,Standard Bank,Classic
+500015,MASTERCARD,MASTERCARD,credit,Egypt,EG,National Bank of Egypt,Gold
