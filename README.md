@@ -1,10 +1,10 @@
-# FMLD Panel - Financial Fraud Detection System
+# FMLD Panel
 
-A professional-grade fraud detection system built with SwiftUI for macOS, featuring local ML inference, real-time transaction monitoring, and comprehensive risk assessment.
+A template fraud detection system built with SwiftUI for macOS, featuring local ML inference, real-time transaction monitoring, and comprehensive risk assessment.
 
 ## 🚀 Features
 
-### Core Functionality
+### DEMO Core Functionality
 - **Real-time Transaction Monitoring** - Live fraud detection as transactions occur
 - **Local ML Inference** - Privacy-focused machine learning without cloud dependencies
 - **BIN Database Integration** - Comprehensive card issuer verification
@@ -136,11 +136,3 @@ This system is designed for production use with:
 ## 📝 License
 
 Proprietary - All rights reserved
-
-## 🤝 Support
-
-For technical support or feature requests, contact the development team.
-
----
-
-**FMLD Panel** - Professional Fraud Detection Made Simple
