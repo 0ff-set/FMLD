@@ -1,138 +1,187 @@
-# FMLD Panel
+FMLD Panel
 
-A template fraud detection system built with SwiftUI for macOS, featuring local ML inference, real-time transaction monitoring, and comprehensive risk assessment. If used leave me some credit 😁.
+FMLD Panel is a macOS SwiftUI demo application that illustrates the structure of a local fraud-monitoring dashboard. It combines rule-based transaction evaluation, local data storage, and optional AI analysis through Ollama to demonstrate how a fraud detection interface could be built.
 
-## 🚀 Features
+This project is intended primarily as a developer template and learning reference, not a complete production fraud-detection system.
 
-### DEMO Core Functionality
-- **Real-time Transaction Monitoring** - Live fraud detection as transactions occur
-- **Local ML Inference** - Privacy-focused machine learning without cloud dependencies
-- **BIN Database Integration** - Comprehensive card issuer verification
-- **Rule-based Engine** - Configurable fraud detection rules
-- **Risk Scoring** - Multi-factor risk assessment algorithms
-- **Transaction Analytics** - Detailed reporting and insights
+⸻
 
-### Technical Highlights
-- **Local AI Processing** - Ollama integration for LLM-powered analysis
-- **Encrypted Database** - Secure transaction storage
-- **External Configuration** - JSON-based rule management
-- **Environment Variables** - Secure API key management
-- **Free API Alternatives** - No paid service dependencies
+Overview
 
-## 🛠️ Installation
+FMLD Panel demonstrates how to build a fraud-analysis interface using a modular Swift architecture. It focuses on:
+	•	transaction monitoring UI
+	•	rule-based risk evaluation
+	•	configurable detection logic
+	•	local data processing
+	•	optional LLM-assisted analysis
 
-### Prerequisites
-- macOS 14.0 or later
-- Xcode 15.0 or later
-- Ollama (optional, for AI analysis)
+The project is designed to be easy to explore and extend.
 
-### Setup
-1. Clone the repository
-2. Open `FMLD Panel.xcodeproj` in Xcode
-3. Build and run the project
+⸻
 
-### Ollama Setup (Optional)
-```bash
-# Install Ollama
+Features
+
+Core Functionality
+	•	Transaction Dashboard
+View and manage transactions inside a SwiftUI monitoring panel.
+	•	Rule-Based Risk Engine
+Transactions are evaluated using configurable rules defined in JSON.
+	•	Risk Scoring System
+Basic scoring logic categorizes transactions into low, medium, and high risk.
+	•	Local Data Storage
+Transaction data is stored locally using SQLite.
+	•	BIN Lookup (Basic)
+Simple card issuer lookup functionality.
+
+⸻
+
+Optional AI Analysis
+
+The project includes optional integration with Ollama for local LLM analysis.
+
+If enabled, the model can provide additional insights about flagged transactions.
+
+Supported models include:
+	•	llama3
+	•	mistral
+	•	any Ollama-compatible local model
+
+AI analysis is optional and not required for running the project.
+
+⸻
+
+Architecture
+
+The project is structured into modular components.
+
+UI Layer
+
+SwiftUI interface for transaction monitoring and risk visualization.
+
+Data Layer
+
+Local storage and transaction persistence.
+
+Rule Engine
+
+Evaluates transactions against configurable detection rules.
+
+AI Layer (Optional)
+
+Provides LLM-based analysis through Ollama.
+
+⸻
+
+Project Structure
+
+FMLD Panel
+│
+├── UI
+│   └── SwiftUI monitoring dashboard
+│
+├── Services
+│   ├── RulesEngine
+│   ├── LocalMLService
+│   ├── OllamaService
+│   └── FreeBinDatabase
+│
+├── Database
+│   └── SQLite storage
+│
+└── Rules
+    └── rules_config.json
+
+
+⸻
+
+Installation
+
+Requirements
+	•	macOS 14+
+	•	Xcode 15+
+
+Setup
+
+Clone the repository:
+
+git clone https://github.com/0ff-set/FMLD
+
+Open the project in Xcode:
+
+FMLD Panel.xcodeproj
+
+Build and run.
+
+⸻
+
+Optional: Ollama Setup
+
+Install Ollama:
+
 curl -fsSL https://ollama.ai/install.sh | sh
 
-# Pull a model (recommended: llama3.1 or mistral)
-ollama pull llama3.1:8b
-```
+Download a model:
 
-## ⚙️ Configuration
+ollama pull llama3
 
-### Environment Variables
-Create a `.env` file or set environment variables:
-```bash
-export APP_ENV=production
-export OPENAI_API_KEY=your_key_here  # Optional
-export STRIPE_PUBLISHABLE_KEY=your_key_here
-export STRIPE_SECRET_KEY=your_key_here
-```
+The application will automatically detect the local Ollama instance.
 
-### Rule Configuration
-Edit `FMLD Panel/Rules/rules_config.json` to customize fraud detection rules:
-```json
+⸻
+
+Rule Configuration
+
+Fraud detection rules are stored in:
+
+Rules/rules_config.json
+
+Example rule:
+
 {
-  "rules": [
+  "id": "001",
+  "name": "High Amount Detection",
+  "category": "amount",
+  "priority": 90,
+  "isActive": true,
+  "conditions": [
     {
-      "id": "001",
-      "name": "High Amount Detection",
-      "category": "amount",
-      "priority": 90,
-      "isActive": true,
-      "conditions": [
-        {
-          "field": "amount",
-          "operator": "greaterThan",
-          "value": "10000",
-          "dataType": "number"
-        }
-      ],
-      "action": "review"
+      "field": "amount",
+      "operator": "greaterThan",
+      "value": "10000",
+      "dataType": "number"
     }
-  ]
+  ],
+  "action": "review"
 }
-```
 
-## 📊 Usage
+Rules can be modified or extended without changing application code.
 
-### Transaction Analysis
-1. Launch the application
-2. Click "Start Application" to initialize services
-3. Navigate to "Transactions" tab
-4. Add new transactions or import data
-5. Review risk scores and AI insights
+⸻
 
-### Risk Assessment
-- **Green (0-30%)**: Low risk - Auto approve
-- **Yellow (31-70%)**: Medium risk - Manual review
-- **Red (71-100%)**: High risk - Block transaction
+Risk Levels
 
-### Real-time Monitoring
-- Enable real-time processing in "Real-time" tab
-- Monitor live transaction feeds
-- Review flagged transactions immediately
+Transactions are categorized using a simple scoring system:
 
-## 🔧 Architecture
+Score	Risk Level	Action
+0–30	Low	Approve
+31–70	Medium	Manual review
+71–100	High	Block
 
-### Core Components
-- **ML Layer**: Local CoreML models + Ollama LLM
-- **Data Layer**: SQLite with encryption
-- **API Layer**: Free alternatives (no paid services)
-- **UI Layer**: SwiftUI with professional design
 
-### Services
-- `LocalMLService` - Core ML inference
-- `OllamaService` - LLM-powered analysis
-- `FreeBinDatabase` - BIN lookup service
-- `RulesEngine` - Configurable rule processing
-- `RealTimeProcessor` - Live transaction monitoring
+⸻
 
-## 🔒 Security
+Intended Use
 
-- **Local Processing** - No data leaves your machine
-- **Encrypted Storage** - Database encryption at rest
-- **Secure Configuration** - Environment variable management
-- **No Hardcoded Keys** - All secrets externalized
+FMLD Panel is useful for:
+	•	learning SwiftUI architecture
+	•	experimenting with rule engines
+	•	prototyping fraud dashboards
+	•	testing local LLM integrations
+	•	building internal monitoring tools
 
-## 📈 Performance
+⸻
 
-- **Real-time Processing** - Sub-second transaction analysis
-- **Local Inference** - No network latency
-- **Optimized Database** - Fast query performance
-- **Memory Efficient** - Minimal resource usage
+License
 
-## 🛡️ Production Ready
+Proprietary.
 
-This system is designed for production use with:
-- Professional UI/UX
-- Comprehensive error handling
-- Logging and monitoring
-- Scalable architecture
-- Security best practices
-
-## 📝 License
-
-Proprietary - All rights reserved
+If you reuse parts of this project, attribution is appreciated.
