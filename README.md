@@ -1,6 +1,4 @@
-import pypandoc
-
-md_text = """
+l
 # FMLD Panel
 
 **FMLD Panel** is a macOS SwiftUI demo application that illustrates the structure of a local fraud‑monitoring dashboard. It combines rule‑based transaction evaluation, local data storage, and optional AI analysis through Ollama to demonstrate how a fraud detection interface could be built.
